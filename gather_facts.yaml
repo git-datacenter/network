@@ -1,3 +1,4 @@
+---
 - name: CloudEngine facts test
   hosts: swdst
   connection: local
@@ -9,20 +10,9 @@
       username: "{{ username }}"
       password: "{{ password }}"
       transport: cli
-
+      community.network.ce_facts:
+        gather_subset: all
+        provider: "{{ cli }}"
   tasks:
 
-  - name: "Gather subset is all"
-    community.network.ce_facts:
-      gather_subset: all
-      provider: "{{ cli }}"
-
-  - name: "Collect only the config facts"
-    community.network.ce_facts:
-      gather_subset: config
-      provider: "{{ cli }}"
-
-  - name: "Do not collect hardware facts"
-    community.network.ce_facts:
-      gather_subset: "!hardware"
-      provider: "{{ cli }}"
+...
