@@ -1,6 +1,6 @@
 ---
 - name: CloudEngine facts test
-  hosts: swdst
+  hosts: all
   connection: local
   gather_facts: false
   vars:
