@@ -12,7 +12,7 @@
 
   tasks:
 
-  - name: "Gather_subset is all"
+  - name: "Gather subset is all"
     community.network.ce_facts:
       gather_subset: all
       provider: "{{ cli }}"
